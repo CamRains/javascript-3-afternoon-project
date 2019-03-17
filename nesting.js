@@ -50,7 +50,31 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater () {
+  for ( let i = 0; i < employees.length; i++) {
+    if (employees [i].firstName === "Theo") {
+      employees.splice(i, 1)
+    } else if (employees [i].firstName === "Lorie") {
+      employees [i].department = "HR"
+    }
+  }
+  return employees
+}
+
+
+
+
+
+// function employeeUpdater () {
+//   for ( var key of employees ) {
+//     if( key.firstName === "Theo") {
+//        employees.splice(employees.indexOf(key),1)
+//     } else if(key.firstName === "Lorie") {
+//         key.department = "HR"
+//       }
+//   }
+//   return employees
+// }
 
 
 
@@ -67,9 +91,35 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
+function removeDuplicates() {
+  for (let i = 0; i < workplaceAccidents.length; i ++) {
+    for(let j  = workplaceAccidents.length -1; j >=0; j--){
+      if(workplaceAccidents[i] == workplaceAccidents[j] && (i != j) ){
+        workplaceAccidents.splice(j,1)
+      }
+    }
+  }
+  return workplaceAccidents
+}
+//  nested for loop way of doing ^^^^^
 
-//Code Here
 
+// var noDuplicates = workplaceAccidents.filter((item, index) => workplaceAccidents.indexOf(item)==index)
+
+// ^^ another way of doing it 
+
+
+// function removeDuplicates () {
+  // let updated = []
+  // let len = workplaceAccidents.length
+  // for (let i = 0; i < len; i++) {
+  //   if (updated.indexOf(workplaceAccidents[i]) = -1) {
+  //     updated.push(workplaceAccidents[i])
+  //   }
+  // }}
+
+
+// [...new Set(workplaceAccidents)];   this is probably the best way to remove duplicates 
 
 
 ////////// PROBLEM 3 //////////
@@ -96,9 +146,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -138,8 +188,13 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
+function recordCleaner () {
+  for (let i=0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false
+  }
+  return
+}
+  
 
 
 ////////// PROBLEM 5 //////////
@@ -157,6 +212,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper () {
+  for (var i = 0; i < numsArr.length; i++) {
+    for (var keyi = 0; keyi < numsArr[i].length; keyi++) {
+      if (numsArr[i][keyi] % 2 === 0) {
+        numsArr[i][keyi] = "even"
+      } else {
+        numsArr[i][keyi] = "odd"
+      }
+    }
+  }
+  return numsArr
+}
 
 
